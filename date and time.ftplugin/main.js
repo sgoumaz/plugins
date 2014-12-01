@@ -8,9 +8,7 @@ define(function(require, exports, module) {
 		name: 'date',
 		description: 'Insert the current date',
 		performCommand: function (editor) {
-			var now = new Date();
-			editor.replaceSelection(now.getFullYear() + '-' + (now.getMonth() + 1) + '-' + now.getDate(),
-					'around');
+			editor.replaceSelection(new Date().format('isoDate'), 'around');
 		}
 	});
 
@@ -18,8 +16,7 @@ define(function(require, exports, module) {
 		name: 'time',
 		description: 'Insert the current time',
 		performCommand: function (editor) {
-			var now = new Date();
-			editor.replaceSelection(now.getHours() + ':' + now.getMinutes(), 'around');
+			editor.replaceSelection(new Date().format('isoTime'), 'around');
 		}
 	});
 
